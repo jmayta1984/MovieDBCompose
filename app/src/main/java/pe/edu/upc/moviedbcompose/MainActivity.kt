@@ -10,6 +10,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
+import pe.edu.upc.moviedbcompose.ui.movies.Movies
+import pe.edu.upc.moviedbcompose.ui.movies.MoviesViewModel
 import pe.edu.upc.moviedbcompose.ui.theme.MoviedbcomposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,11 +21,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             MoviedbcomposeTheme {
                 // A surface container using the 'background' color from the theme
+                val moviesViewModel: MoviesViewModel = viewModel()
+
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-
+                    Movies(moviesViewModel)
                 }
             }
         }

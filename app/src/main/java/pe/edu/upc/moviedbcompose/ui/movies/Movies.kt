@@ -33,12 +33,12 @@ fun MovieRow(movie: Movie) {
 
             MovieImage(modifier = Modifier.weight(1f), movie)
 
-            Column(modifier = Modifier.weight(7f)) {
+            Column(modifier = Modifier
+                .weight(7f)
+                .padding(8.dp)) {
                 Text(text = movie.title, fontWeight = FontWeight.Bold)
                 Spacer(modifier = Modifier.height(2.dp))
-
                 Text(text = movie.overview, maxLines = 2)
-                Spacer(modifier = Modifier.height(4.dp))
             }
 
         }
